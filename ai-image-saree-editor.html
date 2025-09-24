@@ -18,66 +18,86 @@
 <body class="bg-gray-100 text-gray-800 antialiased">
 
     <!-- Navigation Bar -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-colors duration-300 font-poppins">
-        <div class="container mx-auto px-6 flex items-center justify-between h-16">
-            <div class="flex items-center space-x-2">
-                <div class="h-6 w-6 text-white">
-                  <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <a href="work.html" class="text-2xl font-bold text-white">Alfrez</a>
-            </div>
-            
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="work.html#home" class="text-white hover:text-gray-300 transition-smooth">Home</a>
-                <a href="work.html#trending" class="text-white hover:text-gray-300 transition-smooth">Trending</a>
-                <a href="blog.html" class="text-white hover:text-gray-300 transition-colors">Blog</a>
-                <div class="relative"><input type="search" placeholder="search" class="bg-white/20 text-white placeholder-gray-300 rounded-full py-1 px-4 text-sm focus:outline-none focus:bg-white/30 w-32"></div>
-                <a href="work.html#contact" class="text-white hover:text-gray-300 transition-colors">Contact Us</a>
-            </div>
-            
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button class="md:hidden p-2 text-white" id="mobile-menu-btn">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative text-white text-center flex flex-col justify-center items-center px-6 pt-32 pb-20 overflow-hidden bg-black">
+        <div class="relative z-10 flex flex-col justify-center items-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight">AI Image Saree Editor</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Virtually try on different sarees on your photos.</p>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black/50 backdrop-blur-md">
-            <a href="work.html#home" class="block text-white text-center py-2">Home</a>
-            <a href="work.html#trending" class="block text-white text-center py-2">Trending</a>
-            <a href="blog.html" class="block text-white text-center py-2">Blog</a>
-            <a href="work.html#contact" class="block text-white text-center py-2">Contact Us</a>
-        </div>
-         </div>
-    </nav>
+    </header>
 
     <!-- Main Content -->
-    <main class="py-8">
-        <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold">AI Image Saree Editor</h2>
-            <p class="text-gray-400 mt-2">Virtually try on different sarees on your photos.</p>
-        </div>
-      
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-                
+    <main class="py-16">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <!-- Initial Tool Form -->
+                <div id="tool-form" class="space-y-8">
+                    <!-- 1. Tool Name (already in hero, but good for context) -->
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold text-gray-900">AI Image Saree Editor</h2>
+                        <p class="text-gray-600 mt-1">Follow the steps below to generate your image.</p>
+                    </div>
+
+                    <!-- 2. Browse the image -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">1. Upload Your Photo</h3>
+                        <label for="file-upload" class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center cursor-pointer hover:border-purple-500 hover:bg-purple-50 transition-colors block">
+                            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <p class="mt-2 text-sm text-gray-600">
+                                <span class="font-semibold text-purple-600">Click to upload</span> or drag and drop
+                            </p>
+                            <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                            <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                        </label>
+                    </div>
+
+                    <!-- 3. Styles -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-800">2. Select a Saree Style</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <img src="https://via.placeholder.com/150/8B5CF6/FFFFFF?text=Kanjeevaram" alt="Kanjeevaram Saree" class="rounded-lg cursor-pointer border-2 border-purple-500 ring-2 ring-purple-500">
+                            <img src="https://via.placeholder.com/150/EC4899/FFFFFF?text=Banarasi" alt="Banarasi Saree" class="rounded-lg cursor-pointer border-2 border-transparent hover:border-purple-500">
+                            <img src="https://via.placeholder.com/150/10B981/FFFFFF?text=Chanderi" alt="Chanderi Saree" class="rounded-lg cursor-pointer border-2 border-transparent hover:border-purple-500">
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">I will update more styles later!</p>
+                    </div>
+
+                    <!-- 4. Submit Button -->
+                    <div>
+                        <button id="submit-tool" class="w-full bg-purple-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-purple-700 transition-all duration-300 transform hover:-translate-y-1">
+                            Generate Image
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 5. Loading Screen -->
+                <div id="loading-screen" class="hidden text-center py-16">
+                    <div class="flex justify-center items-center mb-4">
+                        <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Generating your image...</h3>
+                    <p class="text-gray-600">This may take a moment.</p>
+                </div>
+
+                <!-- 6. Result Screen -->
+                <div id="result-screen" class="hidden text-center">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">Your Masterpiece is Ready!</h3>
+                    <div class="bg-gray-200 rounded-xl flex items-center justify-center min-h-[400px] mb-6">
+                        <img src="https://via.placeholder.com/400x500/DDDBDB/333333?text=Generated+Image" alt="Generated Saree Image" class="rounded-xl max-w-full h-auto">
+                    </div>
+                    <!-- 7. Download Button -->
+                    <button id="download-button" class="w-full bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-all duration-300">
+                        Download Image
+                    </button>
+                </div>
             </div>
         </div>
     </main>
 
-    <header id="home" class="relative text-white text-center h-56 flex flex-col justify-center items-center px-6 pt-20 overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1469719847081-4757697d117a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
-        <div class="relative z-10 flex flex-col justify-center items-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">AI Image Saree Editor</h1>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Virtually try on different sarees on your photos.</p>
-        </div>
     <!-- Footer -->
     <footer class="bg-gray-900 text-white font-poppins">
         <div class="container mx-auto px-6 py-12">
@@ -107,15 +127,117 @@
                 <p>&copy; 2025 Alfrez. All rights reserved.</p>
             </div>
         </div>
-    </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        // Fetch and insert the header
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // Execute the script tags from the loaded header
+                document.querySelectorAll("#header-placeholder script").forEach(script => {
+                    const newScript = document.createElement("script");
+                    newScript.textContent = script.textContent;
+                    document.body.appendChild(newScript);
+                });
+            });
+
+        // AI Tool Workflow Simulation
+        const submitBtn = document.getElementById('submit-tool');
+        const toolForm = document.getElementById('tool-form');
+        const loadingScreen = document.getElementById('loading-screen');
+        const resultScreen = document.getElementById('result-screen');
+
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => {
+                // Hide form and show loading screen
+                toolForm.classList.add('hidden');
+                loadingScreen.classList.remove('hidden');
+
+                // Simulate processing time (e.g., 3 seconds)
+                setTimeout(() => {
+                    // Hide loading screen and show result
+                    loadingScreen.classList.add('hidden');
+                    resultScreen.classList.remove('hidden');
+                }, 3000);
+            });
+        }
+    </script>
+
+</body>
+</html>
+                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    <span class="font-semibold text-purple-600">Click to upload</span> or drag and drop
+                                </p>
+                                <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                                <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">2. Select a Saree Style</h2>
+                            <div class="grid grid-cols-3 gap-4">
+                                <!-- Saree Style Options -->
+                                <img src="https://via.placeholder.com/150/8B5CF6/FFFFFF?text=Kanjeevaram" alt="Kanjeevaram Saree" class="rounded-lg cursor-pointer border-2 border-transparent hover:border-purple-500">
+                                <img src="https://via.placeholder.com/150/EC4899/FFFFFF?text=Banarasi" alt="Banarasi Saree" class="rounded-lg cursor-pointer border-2 border-transparent hover:border-purple-500">
+                                <img src="https://via.placeholder.com/150/10B981/FFFFFF?text=Chanderi" alt="Chanderi Saree" class="rounded-lg cursor-pointer border-2 border-transparent hover:border-purple-500">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column: Image Preview -->
+                    <div class="bg-gray-200 rounded-xl flex items-center justify-center h-96 md:h-full min-h-[400px]">
+                        <p class="text-gray-500">Your edited image will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white font-poppins">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Alfrez</h3>
+                    <p class="text-gray-400">Your partner in business process automation and digital marketing.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul>
+                        <li class="mb-2"><a href="work.html#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li class="mb-2"><a href="work.html#trending" class="text-gray-400 hover:text-white">Trending</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li class="mb-2"><a href="work.html#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.67.88-.53 1.56-1.37 1.88-2.38-.83.49-1.74.85-2.7 1.03A4.29 4.29 0 0016.1 4a4.19 4.19 0 00-4.19 4.19c0 .34.04.67.11.98-3.48-.18-6.57-1.84-8.63-4.37-.36.61-.57 1.32-.57 2.07 0 1.45.74 2.73 1.86 3.48-.69-.02-1.34-.21-1.91-.53v.05c0 2.03 1.44 3.72 3.35 4.1-.35.1-.72.15-1.1.15-.27 0-.53-.03-.79-.08.53 1.66 2.08 2.87 3.92 2.9-1.44 1.13-3.25 1.8-5.22 1.8-.34 0-.67-.02-1-.06 1.86 1.2 4.07 1.89 6.46 1.89 7.75 0 11.99-6.42 11.99-11.99 0-.18 0-.36-.01-.54.82-.6 1.54-1.35 2.1-2.18z"></path></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Alfrez. All rights reserved.</p>
+            </div>
+        </div>
+
+    <script>
+        // Fetch and insert the header
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // Execute the script tags from the loaded header
+                document.querySelectorAll("#header-placeholder script").forEach(script => {
+                    const newScript = document.createElement("script");
+                    newScript.textContent = script.textContent;
+                    document.body.appendChild(newScript);
+                });
+            });
     </script>
 
 </body>
