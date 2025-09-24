@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Supercharge your business with expert n8n automation and social media management services from work.Alfrez.com.">
+    <title>work.Alfrez.com - Your Automation and Social Media Partner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        } 
+        /* Testimonial Card Styles */
+        .card { position: relative; display: flex; align-items: center; justify-content: center; width: 300px; height: 360px; padding: 32px; border-radius: 24px; overflow: hidden; line-height: 1.6; border: 1px solid #cccccc; transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1); }
+        .content { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 8px; color: #000000; transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1); }
+        .content .quotes { width: 48px; height: 48px; }
+        .content .footer { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+        .content .para { z-index: 1; opacity: 0.8; font-size: 16px; transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1); }
+        .card:hover { box-shadow: 8px 8px #000000; border-color: #000000; transform: translate(-8px, -8px); }
+        .card .header {
+            font-size: 16px;
+        }
+        .card .header strong {
+            font-size: 20px;
+        }
+        /* Reveal on scroll animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        /* Hero text animations */
+        .hero-animate {
+            opacity: 0; /* Start hidden */
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-600 { animation-delay: 0.6s; }
+        
+        /* Custom styles from tailwind.config.js to fix UI issues */
+        .bg-primary-600 { background-color: #2563eb; }
+        .bg-success { background-color: #10b981; }
+        .bg-accent { background-color: #f97316; }
+        .bg-warning { background-color: #f59e0b; }
+        .bg-secondary { background-color: #64748b; }
+        .bg-error { background-color: #ef4444; }
+        .text-text-primary { color: #1e293b; }
+        .text-text-secondary { color: #64748b; }
+        .shadow-soft {
+             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .shadow-deep {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .hover\:shadow-deep:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .transition-smooth {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Add these to your <style> section */
+        .bg-primary { background-color: #2563eb; }
+        .text-primary { color: #2563eb; }
+        .text-primary-700 { color: #1d4ed8; }
+
+        .text-success { color: #10b981; }
+        .text-success-600 { color: #059669; }
+
+        .text-accent { color: #f97316; }
+        .text-accent-600 { color: #ea580c; }
+
+        /* New styles for the Saree Editor card */
+        .bg-purple-600 { background-color: #9333ea; }
+        .text-purple-600 { color: #9333ea; }
+        .text-purple-700 { color: #7e22ce; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-colors duration-300 font-poppins">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="h-6 w-6 text-white">
+                      <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <a href="#" class="text-2xl font-bold text-white">Alfrez</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-gray-300 transition-smooth">Home</a>
+                    <a href="#trending" class="text-white hover:text-gray-300 transition-smooth">Trending</a>
+                    <a href="blog.html" class="text-white hover:text-gray-300 transition-smooth">Blog</a>
+                    <a href="#contact" class="text-white hover:text-gray-300 transition-smooth">Contact Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 text-white" id="mobile-menu-btn">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-black/70 backdrop-blur-sm" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-white">Home</a>
+                <a href="#trending" class="block px-3 py-2 text-white">Trending</a>
+                <a href="blog.html" class="block px-3 py-2 text-white">Blog</a>
+                <a href="#contact" class="block px-3 py-2 text-white">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative text-white text-center h-screen flex flex-col justify-center items-center px-6 pt-20 overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1469719847081-4757697d117a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight hero-animate delay-200">Automate Your Business, Not Your Life</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 hero-animate delay-400">We build intelligent systems that automate your workflows, amplify your presence, and revolutionize how you work.</p>
+            <a href="#contact" class="bg-white text-black font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hero-animate delay-600">Get a Free Consultation</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Quick Access Toolbar Section -->
+        <section class="bg-black py-20">
+            <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10">
+              <h2 class="text-3xl font-bold text-white">Quick Access Toolbar</h2>
+              <p class="text-gray-300 mt-2">Jump straight to the tools you need most.</p>
+            </div>
+          
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+              <!-- Financial -->
+              <a href="#" class="group block bg-white rounded-2xl p-6 text-center shadow-soft hover:shadow-deep transition-all duration-300 flex flex-col">
+                <div class="w-16 h-16 bg-red-600 p-4 rounded-xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-white">
+                      <path d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 0 1-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004ZM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 0 1-.921.42Z" />
+                      <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v.816a3.836 3.836 0 0 0-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 0 1-.921-.421l-.879-.66a.75.75 0 0 0-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 0 0 1.5 0v-.81a4.124 4.124 0 0 0 1.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 0 0-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 0 0 .933-1.175l-.415-.33a3.836 3.836 0 0 0-1.719-.755V6Z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-text-primary mb-2">Financial</h3>
+                <p class="text-sm text-text-secondary mt-auto">Loans, investments, budgets</p>
+              </a>
+          
+              <!-- Health -->
+              <a href="#" class="group block bg-white rounded-2xl p-6 text-center shadow-soft hover:shadow-deep transition-all duration-300 flex flex-col">
+                <div class="w-16 h-16 bg-success p-4 rounded-xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-white">
+                    <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                  </svg>
+                </div>
+                <h3 class="font-semibold text-text-primary mb-2">Health</h3>
+                <p class="text-sm text-text-secondary mt-auto">BMI, calories, fitness</p>
+              </a>
+          
+              <!-- Productivity -->
+              <a href="#" class="group block bg-white rounded-2xl p-6 text-center shadow-soft hover:shadow-deep transition-all duration-300 flex flex-col">
+                <div class="w-16 h-16 bg-accent p-4 rounded-xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-white">
+                      <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-text-primary mb-2">Productivity</h3>
+                <p class="text-sm text-text-secondary mt-auto">Timers, planners, tasks</p>
+              </a>
+          
+              <!-- Conversion -->
+              <a href="#" class="group block bg-white rounded-2xl p-6 text-center shadow-soft hover:shadow-deep transition-all duration-300 flex flex-col">
+                <div class="w-16 h-16 bg-warning p-4 rounded-xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-white">
+                      <path fill-rule="evenodd" d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm17.25 3.75a.75.75 0 00-1.5 0v.755a1.5 1.5 0 01-1.5 1.5H5.25a.75.75 0 000 1.5h12a3 3 0 003-3V9.75z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-text-primary mb-2">Conversion</h3>
+                <p class="text-sm text-text-secondary mt-auto">Units, currency, formats</p>
+              </a>
+          
+              <!-- Planning -->
+              <a href="#" class="group block bg-white rounded-2xl p-6 text-center shadow-soft hover:shadow-deep transition-all duration-300 flex flex-col">
+                <div class="w-16 h-16 bg-secondary p-4 rounded-xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-white">
+                      <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 2.25a.75.75 0 01.75.75v1.5h.75a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9a3 3 0 013-3h.75V3A.75.75 0 016.75 2.25zM5.25 9h13.5V7.5H5.25V9zm0 3h13.5V12H5.25v3z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-text-primary mb-2">Planning</h3>
+                <p class="text-sm text-text-secondary mt-auto">Schedules, goals, projects</p>
+              </a>
+          
+              <!-- Creative -->
+              <a href="#" class="group block bg-white rounded-2xl p-6 text-center shadow-soft hover:shadow-deep transition-all duration-300 flex flex-col">
+                <div class="w-16 h-16 bg-error p-4 rounded-xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-white">
+                      <path d="M10.5 3.75a6 6 0 00-5.98 6.496A5.25 5.25 0 006.75 20.25H18a4.5 4.5 0 002.206-8.406 3.75 3.75 0 00-3.706-5.442 6.003 6.003 0 00-5.994-2.694z" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-text-primary mb-2">Creative</h3>
+                <p class="text-sm text-text-secondary mt-auto">Colors, fonts, generators</p>
+              </a>
+            </div>
+            </div>
+        </section>
+
+        <!-- Trending Tools Section -->
+        <section id="trending" class="py-20 bg-black text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold">Trending Tools & Workflows</h2>
+                    <p class="text-gray-400 mt-2">Discover our most popular automation solutions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center max-w-4xl mx-auto">
+                  <!-- Card 1 -->
+                  <div class="bg-white rounded-2xl p-6 shadow-soft flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-primary text-white p-2 rounded-lg">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 0a1 1 0 100 2h.01a1 1 0 100-2H9zm2 0a1 1 0 100 2h.01a1 1 0 100-2H11z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded-full">Tax Season</span>
+                    </div>
+                    <h3 class="font-semibold text-text-primary mb-2">Tax Calculator</h3>
+                    <p class="text-sm text-text-secondary mb-4 flex-grow">Estimate your 2024 tax liability and refund.</p>
+                    <a href="tax-calculator.html" class="text-primary font-medium text-sm hover:text-primary-700 transition-smooth mt-auto">
+                        Calculate Now →
+                    </a>
+                  </div>
+                
+                  <!-- Card 2 -->
+                  <div class="bg-white rounded-2xl p-6 shadow-soft flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-success text-white p-2 rounded-lg">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5zM6 9a1 1 0 112 0 1 1 0 01-2 0zm6 0a1 1 0 112 0 1 1 0 01-2 0z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span class="bg-success text-white text-xs px-2 py-1 rounded-full">New Year</span>
+                    </div>
+                    <h3 class="font-semibold text-text-primary mb-2">Fitness Tracker</h3>
+                    <p class="text-sm text-text-secondary mb-4 flex-grow">Track your fitness goals and progress.</p>
+                    <a href="individual_tool_pages.html" class="text-success font-medium text-sm hover:text-success-600 transition-smooth mt-auto">
+                        Start Tracking →
+                    </a>
+                  </div>
+                
+                  <!-- Card 3 -->
+                  <div class="bg-white rounded-2xl p-6 shadow-soft flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-accent text-white p-2 rounded-lg ">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4z" /><path d="M6 8a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8z" /></svg>
+                        </div>
+                        <span class="bg-accent text-white text-xs px-2 py-1 rounded-full">Popular</span>
+                    </div>
+                    <h3 class="font-semibold text-text-primary mb-2">Budget Planner</h3>
+                    <p class="text-sm text-text-secondary mb-4 flex-grow">Plan your 2025 budget and financial goals.</p>
+                    <a href="budget-planner.html" class="text-accent font-medium text-sm hover:text-accent-600 transition-smooth mt-auto">
+                        Plan Budget →
+                    </a>
+                </div>
+
+                  <!-- Card 4: AI Saree Editor -->
+                  <div class="bg-white rounded-2xl p-6 shadow-soft flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-purple-600 text-white p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                                <path d="M9.53 2.47a.75.75 0 011.06 0l7.25 7.25a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06-1.06L15.94 11H3.75a.75.75 0 010-1.5h12.19L9.53 3.53a.75.75 0 010-1.06z" />
+                            </svg>
+                        </div>
+                        <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">New</span>
+                    </div>
+                    <h3 class="font-semibold text-text-primary mb-2">AI Saree Editor</h3>
+                    <p class="text-sm text-text-secondary mb-4 flex-grow">Virtually try on different sarees on your photos.</p>
+                    <a href="ai-image-saree-editor.html" class="text-purple-600 font-medium text-sm hover:text-purple-700 transition-smooth mt-auto">
+                        Try Now →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section (formerly Testimonials) -->
+        <section id="testimonials" class="py-20" style="background-color: #DDDBDB;">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold">What Our Clients Say</h2>
+                    <p class="text-gray-600 mt-2">Real results from real businesses.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-12">
+                    <!-- Testimonial 1 -->
+                    <div class="card reveal transition-all duration-300">
+                        <div class="content">
+                            <div class="header">
+                                <strong>Jane Doe</strong>
+                                <p class="para">CEO of Innovate Inc.</p>
+                            </div>
+                            <div class="footer">
+                                <svg viewBox="0 0 24 24" class="quotes">
+                                    <path fill="black" d="M4.58341 17.3211C3.55316 16.2274 3 15 3 13.0103C3 9.51086 5.45651 6.37366 9.03059 4.82318L9.92328 6.20079C6.58804 8.00539 5.93618 10.346 5.67564 11.822C6.21263 11.5443 6.91558 11.4466 7.60471 11.5105C9.40908 11.6778 10.8312 13.159 10.8312 15C10.8312 16.933 9.26416 18.5 7.33116 18.5C6.2581 18.5 5.23196 18.0095 4.58341 17.3211ZM14.5834 17.3211C13.5532 16.2274 13 15 13 13.0103C13 9.51086 15.4565 6.37366 19.0306 4.82318L19.9233 6.20079C16.588 8.00539 15.9362 10.346 15.6756 11.822C16.2126 11.5443 16.9156 11.4466 17.6047 11.5105C19.4091 11.6778 20.8312 13.159 20.8312 15C20.8312 16.933 19.2642 18.5 17.3312 18.5C16.2581 18.5 15.232 18.0095 14.5834 17.3211Z"></path>
+                                </svg>
+                                <p class="para">"Alfrez transformed our operations. The time we've saved with their n8n workflows is incredible, allowing us to focus on growth."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="card reveal transition-all duration-300">
+                        <div class="content">
+                            <div class="header">
+                                <strong>John Smith</strong>
+                                <p class="para">Marketing Director at TechCorp</p>
+                            </div>
+                            <div class="footer">
+                                <svg viewBox="0 0 24 24" class="quotes">
+                                    <path fill="black" d="M4.58341 17.3211C3.55316 16.2274 3 15 3 13.0103C3 9.51086 5.45651 6.37366 9.03059 4.82318L9.92328 6.20079C6.58804 8.00539 5.93618 10.346 5.67564 11.822C6.21263 11.5443 6.91558 11.4466 7.60471 11.5105C9.40908 11.6778 10.8312 13.159 10.8312 15C10.8312 16.933 9.26416 18.5 7.33116 18.5C6.2581 18.5 5.23196 18.0095 4.58341 17.3211ZM14.5834 17.3211C13.5532 16.2274 13 15 13 13.0103C13 9.51086 15.4565 6.37366 19.0306 4.82318L19.9233 6.20079C16.588 8.00539 15.9362 10.346 15.6756 11.822C16.2126 11.5443 16.9156 11.4466 17.6047 11.5105C19.4091 11.6778 20.8312 13.159 20.8312 15C20.8312 16.933 19.2642 18.5 17.3312 18.5C16.2581 18.5 15.232 18.0095 14.5834 17.3211Z"></path>
+                                </svg>
+                                <p class="para">"Our social media engagement has skyrocketed since partnering with Alfrez. Their team is creative, responsive, and truly understands our brand voice."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="bg-black text-white">
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <!-- Left side: Text -->
+                    <div class="text-center md:text-left reveal">
+                        <h2 class="text-4xl font-bold mb-4">Ready to Grow Your Business?</h2>
+                        <p class="text-gray-300 max-w-lg mx-auto md:mx-0 mb-8">Let's talk about how our automation and social media solutions can help you achieve your goals. Get in touch for a no-obligation consultation.</p>
+                    </div>
+                    <!-- Right side: Form -->
+                    <div class="reveal">
+                        <form action="#" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                                <input type="text" name="name" id="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-white focus:outline-none transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                                <input type="email" name="email" id="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-white focus:outline-none transition-colors" placeholder="you@example.com">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                                <textarea name="message" id="message" rows="4" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-white focus:outline-none transition-colors" placeholder="Your message here..."></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:-translate-y-1">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Alfrez</h3>
+                    <p class="text-gray-400">Your partner in business process automation and digital marketing.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li class="mb-2"><a href="#trending" class="text-gray-400 hover:text-white">Trending</a></li>
+                        <li class="mb-2"><a href="#testimonials" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.67.88-.53 1.56-1.37 1.88-2.38-.83.49-1.74.85-2.7 1.03A4.29 4.29 0 0016.1 4a4.19 4.19 0 00-4.19 4.19c0 .34.04.67.11.98-3.48-.18-6.57-1.84-8.63-4.37-.36.61-.57 1.32-.57 2.07 0 1.45.74 2.73 1.86 3.48-.69-.02-1.34-.21-1.91-.53v.05c0 2.03 1.44 3.72 3.35 4.1-.35.1-.72.15-1.1.15-.27 0-.53-.03-.79-.08.53 1.66 2.08 2.87 3.92 2.9-1.44 1.13-3.25 1.8-5.22 1.8-.34 0-.67-.02-1-.06 1.86 1.2 4.07 1.89 6.46 1.89 7.75 0 11.99-6.42 11.99-11.99 0-.18 0-.36-.01-.54.82-.6 1.54-1.35 2.1-2.18z"></path></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Alfrez. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="hidden fixed bottom-8 right-8 bg-black/50 text-white p-3 rounded-full shadow-lg hover:bg-black/75 transition-all duration-300 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar background on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black', 'bg-opacity-70', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('bg-black', 'bg-opacity-70', 'backdrop-blur-sm');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+
+</html>
